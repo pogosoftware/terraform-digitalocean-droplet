@@ -24,7 +24,6 @@ No modules.
 |------|------|
 | [digitalocean_droplet.main](https://registry.terraform.io/providers/digitalocean/digitalocean/2.21.0/docs/resources/droplet) | resource |
 | [digitalocean_ssh_key.main](https://registry.terraform.io/providers/digitalocean/digitalocean/2.21.0/docs/resources/ssh_key) | resource |
-| [digitalocean_tag.main](https://registry.terraform.io/providers/digitalocean/digitalocean/2.21.0/docs/resources/tag) | resource |
 
 ## Inputs
 

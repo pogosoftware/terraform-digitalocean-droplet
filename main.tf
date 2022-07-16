@@ -6,12 +6,6 @@ resource "digitalocean_ssh_key" "main" {
   public_key = file(var.ssh_key_public_key)
 }
 
-resource "digitalocean_tag" "main" {
-  for_each = var.droplet_tags
-
-  name = each.key
-}
-
 ###################################################################################################
 ### digitalocean_droplet
 ###################################################################################################
