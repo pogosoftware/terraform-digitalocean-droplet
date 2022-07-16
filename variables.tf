@@ -1,7 +1,12 @@
 ###################################################################################################
 ### digitalocean_ssh_key
 ###################################################################################################
-resource "digitalocean_ssh_key" "main" {
-  name       = var.ssh_key_name
-  public_key = file(var.ssh_key_public_key)
+variable "ssh_key_name" {
+  description = "The name of the SSH key for identification"
+  type        = string
+}
+
+variable "ssh_key_public_key" {
+  description = "The path to public key"
+  type        = string
 }
