@@ -10,8 +10,10 @@ resource "digitalocean_ssh_key" "main" {
 ### digitalocean_droplet
 ###################################################################################################
 resource "digitalocean_droplet" "main" {
+  for_each = local.droplets
+
   image  = var.droplet_image
-  name   = var.droplet_name
+  name   = each.key
   region = var.droplet_region
   size   = var.droplet_size
 

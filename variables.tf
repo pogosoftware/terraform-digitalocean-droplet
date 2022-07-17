@@ -19,11 +19,6 @@ variable "droplet_image" {
   type        = string
 }
 
-variable "droplet_name" {
-  description = "The Droplet name"
-  type        = string
-}
-
 variable "droplet_region" {
   description = "The region to start in"
   type        = string
@@ -32,6 +27,29 @@ variable "droplet_region" {
 variable "droplet_size" {
   description = "The unique slug that indentifies the type of Droplet"
   type        = string
+}
+
+variable "droplet_use_name_prefix" {
+  default     = false
+  description = "Determinate to use name preffix for droplet or not"
+  type        = bool
+}
+variable "droplet_names" {
+  default     = []
+  description = "Required if `droplet_use_name_prefix` is set to `false`. The names of droplets to create. Conflicts with `droplet_name` and `droplet_node_count`"
+  type        = set(string)
+}
+
+variable "droplet_name" {
+  default     = null
+  description = "Required if `droplet_use_name_prefix` is set to `true`. The name of the droplet. Conflicts with `droplet_names`"
+  type        = string
+}
+
+variable "droplet_node_count" {
+  default     = 1
+  description = "Required if `droplet_use_name_prefix` is set to `true`. The number of droplets to create. Conflicts with `droplet_names`"
+  type        = number
 }
 
 variable "droplet_backups" {

@@ -21,30 +21,30 @@ output "ssh_key_fingerprint" {
 ###################################################################################################
 output "droplet_id" {
   description = "The ID of the Droplet"
-  value       = digitalocean_droplet.main.id
+  value       = { for k, v in digitalocean_droplet.main : k => digitalocean_droplet.main[k].id }
 }
 
 output "droplet_urn" {
   description = "The uniform resource name of the Droplet"
-  value       = digitalocean_droplet.main.urn
+  value       = { for k, v in digitalocean_droplet.main : k => digitalocean_droplet.main[k].urn }
 }
 
 output "droplet_ipv4_address" {
   description = "The IPv4 address"
-  value       = digitalocean_droplet.main.ipv4_address
+  value       = { for k, v in digitalocean_droplet.main : k => digitalocean_droplet.main[k].ipv4_address }
 }
 
 output "droplet_ipv4_address_private" {
   description = "The private networking IPv4 address"
-  value       = digitalocean_droplet.main.ipv4_address_private
+  value       = { for k, v in digitalocean_droplet.main : k => digitalocean_droplet.main[k].ipv4_address_private }
 }
 
 output "droplet_locked" {
   description = "Is the Droplet locked"
-  value       = digitalocean_droplet.main.locked
+  value       = { for k, v in digitalocean_droplet.main : k => digitalocean_droplet.main[k].locked }
 }
 
 output "droplet_private_networking" {
   description = "Is private networking enabled"
-  value       = digitalocean_droplet.main.private_networking
+  value       = { for k, v in digitalocean_droplet.main : k => digitalocean_droplet.main[k].private_networking }
 }
