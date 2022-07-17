@@ -35,11 +35,14 @@ No modules.
 | <a name="input_droplet_image"></a> [droplet\_image](#input\_droplet\_image) | The Droplet image ID or slug | `string` | n/a | yes |
 | <a name="input_droplet_ipv6"></a> [droplet\_ipv6](#input\_droplet\_ipv6) | Boolean controlling if IPv6 is enabled. Defaults to `false` | `bool` | `false` | no |
 | <a name="input_droplet_monitoring"></a> [droplet\_monitoring](#input\_droplet\_monitoring) | Boolean controlling whether monitoring agent is installed. Defaults to `false` | `bool` | `false` | no |
-| <a name="input_droplet_name"></a> [droplet\_name](#input\_droplet\_name) | The Droplet name | `string` | n/a | yes |
+| <a name="input_droplet_name"></a> [droplet\_name](#input\_droplet\_name) | Required if `droplet_use_name_prefix` is set to `true`. The name of the droplet. Conflicts with `droplet_names` | `string` | `null` | no |
+| <a name="input_droplet_names"></a> [droplet\_names](#input\_droplet\_names) | Required if `droplet_use_name_prefix` is set to `false`. The names of droplets to create. Conflicts with `droplet_name` and `droplet_node_count` | `set(string)` | `[]` | no |
+| <a name="input_droplet_node_count"></a> [droplet\_node\_count](#input\_droplet\_node\_count) | Required if `droplet_use_name_prefix` is set to `true`. The number of droplets to create. Conflicts with `droplet_names` | `number` | `1` | no |
 | <a name="input_droplet_region"></a> [droplet\_region](#input\_droplet\_region) | The region to start in | `string` | n/a | yes |
 | <a name="input_droplet_resize_disk"></a> [droplet\_resize\_disk](#input\_droplet\_resize\_disk) | Boolean controlling whether to increase the disk size when resizing a Droplet. It defaults to `true` | `bool` | `true` | no |
 | <a name="input_droplet_size"></a> [droplet\_size](#input\_droplet\_size) | The unique slug that indentifies the type of Droplet | `string` | n/a | yes |
 | <a name="input_droplet_tags"></a> [droplet\_tags](#input\_droplet\_tags) | A list of the tags to be applied to this Droplet | `set(string)` | `[]` | no |
+| <a name="input_droplet_use_name_prefix"></a> [droplet\_use\_name\_prefix](#input\_droplet\_use\_name\_prefix) | Determinate to use name preffix for droplet or not | `bool` | `false` | no |
 | <a name="input_droplet_user_data"></a> [droplet\_user\_data](#input\_droplet\_user\_data) | A string of the desired User Data for the Droplet | `string` | `null` | no |
 | <a name="input_droplet_volume_ids"></a> [droplet\_volume\_ids](#input\_droplet\_volume\_ids) | A list of the IDs of each block storage volume to be attached to the Droplet | `set(string)` | `[]` | no |
 | <a name="input_droplet_vpc_uuid"></a> [droplet\_vpc\_uuid](#input\_droplet\_vpc\_uuid) | The ID of the VPC where the Droplet will be located | `string` | `null` | no |
